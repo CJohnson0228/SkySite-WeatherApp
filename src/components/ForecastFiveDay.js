@@ -10,7 +10,7 @@ function ForecastFiveDay(props) {
   const weatherKeys = Object.keys(weatherArray);
 
   return (
-    <Row className="mt-5">
+    <Row className="mt-5 pb-5">
        {weatherKeys.map((item, i) => (
          <Col>
           <ForecastItem key={i} data={weatherArray[i]} id={i}/>

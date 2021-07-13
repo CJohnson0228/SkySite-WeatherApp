@@ -4,21 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 function Header(props) {
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"];
-
-  var today = new Date()
-  var hours = today.getHours()
-  var minutes = today.getMinutes()
-  var ampm = (hours >= 12) ? "PM" : "AM";
-  hours = hours % 12;
-  hours = hours ? hours : 12;
-  minutes = minutes < 10 ? '0' + minutes : minutes
-  var curTime = hours + ':' + minutes + " " + ampm;
-  var curDate = monthNames[today.getMonth()] + " " + today.getDate() + ", " + today.getFullYear()
+  
 
   return (
-    <Row className="mb-2">
+    <Row className="mb-2 p-3">
       <Col className="my-auto">
         <Button variant="secondary" size="sm">Theme</Button>
       </Col>
@@ -26,7 +15,7 @@ function Header(props) {
         <Row><h3 className="text-center">{props.location}</h3></Row>  
       </Col>
       <Col className="my-auto">
-        <Row><p className="my-auto text-end" >{ curDate }  { curTime }</p></Row>
+        <Row><p className="my-auto text-end" >{ props.date }  { props.time }</p></Row>
       </Col>
     </Row>
   );

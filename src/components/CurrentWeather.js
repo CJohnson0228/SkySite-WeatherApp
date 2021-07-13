@@ -34,7 +34,6 @@ function CurrentWeather(props) {
   var mPressure = props.data.main.pressure;
   var ePressure = millibarsToInHg(props.data.main.pressure);
 
-  console.log(props)
   return (
     <div>
       <Jumbotron 
@@ -43,99 +42,124 @@ function CurrentWeather(props) {
           text-center 
           justify-content-center 
           align-items center" 
-        style={{height: "40vh"}}>
+        style={{height: "50vh"}}>
           <Row className="my-auto">
             <Col 
+              
               className="
                 d-flex 
                 justify-content-center 
                 align-items-end" 
               xs={2}>
                 <div 
-                  className="bg-secondary p-5 mt-5" 
-                  style={{ 
-                    border: "3px solid #fff", 
-                    borderRadius: "50%", 
-                    zIndex: "1"}}>
+                  style={{
+                    backgroundColor: "rgba(255,255,255,0.2)"
+                  }}
+                  className="
+                    p-5 
+                    rounded-circle">
                       <img src={weatherIcon} alt="" />
                 </div>
             </Col>
-            <Col md="auto p-5" >
-              <p className="p-0 m-0">
-                Real Feel: {realFeelF}&#176;F /&#xa0;{realFeelC}&#176;C 
-              </p>
-              <h1 className="my-4">
-                {tempF}&#176;F&#xa0;/&#xa0;{tempC}&#176;C
-              </h1>
-              <p className="p-0 m-0">
-                Today's Low: {tempLowF}&#176;F&#xa0;/&#xa0;{tempLowC}&#176;C
-              </p>
-              <p className="p-0 m-0 mb-3">
-                Today's Hi: {tempHiF}&#176;F&#xa0;/&#xa0;{tempHiC}&#176;C
-              </p>
-              <h2>
-                {weatherDesc}
-              </h2>
+            <Col 
+              md="auto p-5" 
+              className="
+                d-flex
+                justify-content-center
+                align-items-center
+                rounded-circle"
+              style={{
+                height: "400px",
+                width: "400px",
+                backgroundColor: "rgba(255,255,255,0.2)"
+              }}>
+                <div>
+                  <p className="p-0 m-0">
+                    Real Feel: {realFeelF}&#176;F /&#xa0;{realFeelC}&#176;C 
+                  </p>
+                  <h1 className="my-4">
+                    {tempF}&#176;F&#xa0;/&#xa0;{tempC}&#176;C
+                  </h1>
+                  <p className="p-0 m-0">
+                    Today's Low: {tempLowF}&#176;F&#xa0;/&#xa0;{tempLowC}&#176;C
+                  </p>
+                  <p className="p-0 m-0 mb-3">
+                    Today's Hi: {tempHiF}&#176;F&#xa0;/&#xa0;{tempHiC}&#176;C
+                  </p>
+                  <h2>
+                    {weatherDesc}
+                  </h2>
+                </div>
+                
             </Col>
             <Col xs={2}></Col> 
           </Row>
       </Jumbotron>
-      <Row className="border-top border-bottom border-secondary border-1 py-3">
-        <Col className="text-center">
-          <FaSun className="mb-2" style={{ fontSize: "1.5rem"}}/>
-          <div className="d-flex justify-content-around align-items-center mt-1">
-            <div>
-              <p className="mb-0">Sunrise:</p> 
-              <p className="mb-0">Sunset:</p> 
-            </div>
-            <div>
-              <p className="mb-0">{ sunRise }</p> 
-              <p className="mb-0">{ sunSet }</p> 
-            </div>
-          </div>   
-        </Col>
-        <Col className="text-center">
-          <GiWindsock className="mb-2" style={{ fontSize: "1.5rem"}} />
-          <div className="d-flex justify-content-center align-items-center">
-            <div>
-              <p className="mb-0 mt-1">Wind { windDir } at</p>
-              <p className="mb-0">{ eWindSpeed } mph</p>
-              <p className="mb-0">{ mWindSpeed } m/s</p>
-            </div> 
-          </div>
-        </Col>
-        <Col className="text-center">
-          <FiEye className="mb-2" style={{ fontSize: "1.5rem"}} />
-          <div className="d-flex justify-content-around align-items-center">
-            <div>
-              <p className="mb-0 mt-1">Visibility</p>
-              <p className="mb-0">{eVisibility} miles</p>
-              {mVisibility > 999 
-                ? <p className="mb-0">{mVisibility / 1000} kms</p> 
-                : <p className="mb-0">{mVisibility} ms</p>
-              }
-            </div>
-          </div>
-        </Col>
-        <Col className="text-center">
-          <BsDropletHalf className="mb-2" style={{ fontSize: "1.5rem"}} />
-          <div className="d-flex justify-content-around align-items-center">
-            <div>
-              <p className="mb-0 mt-1">Humidity</p>
-              <p className="mb-0">{props.data.main.humidity}%</p>
-            </div>
-          </div>  
-        </Col>
-        <Col className="text-center">
-          <FiThermometer className="mb-2" style={{ fontSize: "1.5rem"}} />
-          <div className="d-flex justify-content-around align-items-center">
-            <div>
-              <p className="mb-0 mt-1">Pressure</p>
-              <p className="mb-0">{ePressure} inHg</p>
-              <p className="mb-0">{mPressure} mbar</p>
-            </div>
-          </div>  
-        </Col>
+      <Row 
+        style={{
+          backgroundColor: "rgba(255,255,255,0.2)"
+        }}
+        className="
+          border-top 
+          border-bottom 
+          border-light 
+          border-1 
+          py-3">
+            <Col className="text-center">
+              <FaSun className="mb-2" style={{ fontSize: "1.5rem", color: "#ae2012"}}/>
+              <div className="d-flex justify-content-around align-items-center mt-1">
+                <div>
+                  <p className="mb-0">Sunrise:</p> 
+                  <p className="mb-0">Sunset:</p> 
+                </div>
+                <div>
+                  <p className="mb-0">{ sunRise }</p> 
+                  <p className="mb-0">{ sunSet }</p> 
+                </div>
+              </div>   
+            </Col>
+            <Col className="text-center">
+              <GiWindsock className="mb-2" style={{ fontSize: "1.5rem"}} />
+              <div className="d-flex justify-content-center align-items-center">
+                <div>
+                  <p className="mb-0 mt-1">Wind { windDir } at</p>
+                  <p className="mb-0">{ eWindSpeed } mph</p>
+                  <p className="mb-0">{ mWindSpeed } m/s</p>
+                </div> 
+              </div>
+            </Col>
+            <Col className="text-center">
+              <FiEye className="mb-2" style={{ fontSize: "1.5rem"}} />
+              <div className="d-flex justify-content-around align-items-center">
+                <div>
+                  <p className="mb-0 mt-1">Visibility</p>
+                  <p className="mb-0">{eVisibility} miles</p>
+                  {mVisibility > 999 
+                    ? <p className="mb-0">{mVisibility / 1000} kms</p> 
+                    : <p className="mb-0">{mVisibility} ms</p>
+                  }
+                </div>
+              </div>
+            </Col>
+            <Col className="text-center">
+              <BsDropletHalf className="mb-2" style={{ fontSize: "1.5rem"}} />
+              <div className="d-flex justify-content-around align-items-center">
+                <div>
+                  <p className="mb-0 mt-1">Humidity</p>
+                  <p className="mb-0">{props.data.main.humidity}%</p>
+                </div>
+              </div>  
+            </Col>
+            <Col className="text-center">
+              <FiThermometer className="mb-2" style={{ fontSize: "1.5rem"}} />
+              <div className="d-flex justify-content-around align-items-center">
+                <div>
+                  <p className="mb-0 mt-1">Pressure</p>
+                  <p className="mb-0">{ePressure} inHg</p>
+                  <p className="mb-0">{mPressure} mbar</p>
+                </div>
+              </div>  
+            </Col>
       </Row>
     </div>
   )

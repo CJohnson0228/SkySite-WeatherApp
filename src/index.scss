@@ -1,20 +1,6 @@
-/*
-$theme-colors: (
-  "primary": #55367D,
-  "secondary": #3AB3B0,
-  "success": #97F4A6,
-  "info": #96EECE,
-  "danger": #AA496D,
-  "warning": #F8F479,
-  "light": #F1F1F1,
-  "dark": #3D3D3D,
-  "primary-fade": #B49BD4,
-  "secondary-fade": #B2E6E5,
-  "primary-light": #D3C6E3,
-  "secondary-light": #E6F6E9,
-  "primary-dark": #D3C6E3,
-  "secondary-dark": #5B6867,
-); */
+::-webkit-scrollbar{
+  display: none;
+}
 
 /* ------- bootstrap sass import ------- */
 @import "../node_modules/bootstrap/scss/bootstrap";

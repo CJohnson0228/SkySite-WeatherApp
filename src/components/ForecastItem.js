@@ -3,8 +3,6 @@ import Card from 'react-bootstrap/Card';
 import celsiusToFahrenheit from '../hooks/celsiusToFahrenheit';
 
 function ForecastItem(props) {
-  console.log(props)
-  
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   
   const dateConvert = (uDate) => {
@@ -27,19 +25,24 @@ function ForecastItem(props) {
   
 
   return (
-    <Card className="text-center py-3 px-1">
-      <Card.Body>
-        <Card.Title>{thisDate}</Card.Title>
-        <Card.Img variant="top" src={weatherIcon} style={{ width: "70px"}}/>
-        <Card.Subtitle>{weatherDesc}</Card.Subtitle>
-        <p> </p>
-        <Card.Text className="mb-0"><u>High Temp:</u></Card.Text>
-        <Card.Text>{tempHiF}&#176;F&#xa0;/&#xa0;{tempHiC}&#176;C </Card.Text>
-        <Card.Text className="mb-0"><u>Low Temp:</u></Card.Text>
-        <Card.Text>{tempLowF}&#176;F&#xa0;/&#xa0;{tempLowC}&#176;C </Card.Text>
-        <Card.Text className="mb-0"><u>Humidity:</u></Card.Text>
-        <Card.Text>{props.data.humidity}%</Card.Text>
-      </Card.Body>
+    <Card 
+      style={{
+        backgroundColor: "rgba(255,255,255,0.2)",
+        borderRadius: "20px"
+      }}
+      className="text-center py-3 px-1 border-0">
+        <Card.Body>
+          <Card.Title>{thisDate}</Card.Title>
+          <Card.Img variant="top" src={weatherIcon} style={{ width: "70px"}}/>
+          <Card.Subtitle>{weatherDesc}</Card.Subtitle>
+          <p> </p>
+          <Card.Text className="mb-0"><u>High Temp:</u></Card.Text>
+          <Card.Text>{tempHiF}&#176;F&#xa0;/&#xa0;{tempHiC}&#176;C </Card.Text>
+          <Card.Text className="mb-0"><u>Low Temp:</u></Card.Text>
+          <Card.Text>{tempLowF}&#176;F&#xa0;/&#xa0;{tempLowC}&#176;C </Card.Text>
+          <Card.Text className="mb-0"><u>Humidity:</u></Card.Text>
+          <Card.Text>{props.data.humidity}%</Card.Text>
+        </Card.Body>
     </Card>
   )
 }
